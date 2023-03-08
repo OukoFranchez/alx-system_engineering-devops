@@ -1,2 +1,2 @@
 #!/bin/bash
-(ls -ap1 --group-directories-first | LC_COLLATE=C sort -df | sed -e 's/\(.*\)\/$/\1\//' | paste -sd ',' - ; echo '') | tr -d '\n'
+ls -paxm
