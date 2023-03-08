@@ -1,2 +1,2 @@
 #!/bin/bash
-cp --exclude='*' --include='*.html' ./ ../
+cp -u --update $src_dir/*.html $(dirname $src_dir)
