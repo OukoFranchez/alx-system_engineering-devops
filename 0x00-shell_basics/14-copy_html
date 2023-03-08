@@ -1,2 +1,2 @@
 #!/bin/bash
-cp -av --update --exclude='*' --include='*.html' ./ ../
+cp --exclude='*' --include='*.html' ./ ../
