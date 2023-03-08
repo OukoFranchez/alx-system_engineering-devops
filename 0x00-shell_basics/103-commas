@@ -1,2 +1,0 @@
-#!/bin/bash
-ls -ap1U | grep -v "^\.\/\?\.$" | LC_COLLATE=C sort -df | sed -e 's/\(.*\)\/$/\1\//' | paste -sd ',' - && echo
