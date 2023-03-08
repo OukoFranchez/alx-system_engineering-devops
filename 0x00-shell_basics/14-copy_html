@@ -1,2 +1,2 @@
 #!/bin/bash
-cp -u --update $src_dir/*.html $(dirname $src_dir)
+cp -u --recursive --no-clobber --update *.html ..
