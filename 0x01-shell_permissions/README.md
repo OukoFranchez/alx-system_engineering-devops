@@ -16,6 +16,11 @@ When you run this command, a new directory named my_dir will be created in the c
 13-change_group
 
 chgrp school hello
-This command uses the chgrp command to change the group ownership of the file hello to the group named school. The new group ownership will apply to the file hello only.
+This command uses the chgrp command to change the group ownership of the file hello to the group named school. The new group ownership will apply to the file henllo only.
 
 Note that to use this command, you must have permission to change the group ownership of the file. If you are not the owner of the file or a member of the existing group ownership, you may need to use sudo or obtain permission from the file owner or system administrator.
+
+101-symbolic_link_permissions
+
+chown -h vincent:staff _hello
+In this command, the "-h" option is used to modify the ownership of the symbolic link itself rather than the file or directory it points to. Without the "-h" option, the ownership of the file or directory pointed to by the symbolic link would be modified instead.
