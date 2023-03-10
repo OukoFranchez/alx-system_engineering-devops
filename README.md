@@ -1,5 +1,5 @@
-# alx-system_engineering-devops
-## 0x00-shell_basics
+# 👽alx-system_engineering-devops👽
+## ♠️0x00-shell_basics♠️
 Has command on shell basics
 ### 0. Where am I?
 !/bin/bash
