@@ -39,6 +39,11 @@ Display lines containing the pattern “root” and 3 lines after them in the fi
 grep -A 3 "root" /etc/passwd
 
 This uses the -A option of grep to specify the number of lines after the matching pattern to include in the output. In this case, we specify 3 to include 3 lines after each line that contains the pattern "root" in the /etc/passwd file.
+## 17. I hate bins
+Display all the lines in the file /etc/passwd that do not contain the pattern “bin”.
+
+grep -v "bin" /etc/passwd
+
 ## 18. Letters only please
 Display all lines of the file /etc/ssh/sshd_config starting with a letter.
 
@@ -53,3 +58,5 @@ The regular expression ^[[:alpha:]] is composed of two parts:
 [[:alpha:]] - This is a character class that matches any alphabetic character, both uppercase and lowercase. The character class is enclosed in square brackets, which tells the regular expression to match any character that falls within the class.
 
 So when we combine these two parts, we get a regular expression that matches any line in the /etc/ssh/sshd_config file that begins with an alphabetic character, whether uppercase or lowercase. This is because the regular expression starts at the beginning of the line and matches any character that falls within the alphabetic character class.
+
+
