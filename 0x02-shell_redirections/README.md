@@ -27,3 +27,10 @@ Display lines containing the pattern “root” from the file /etc/passwd
 grep "root" /etc/passwd
 
 This command searches for lines containing the pattern "root" in the file /etc/passwd.
+## 15. Count that word
+Display the number of lines that contain the pattern “bin” in the file /etc/passwd
+
+grep -c "bin" /etc/passwd
+
+The -c option of grep is used to count the number of matches. So, the command grep -c "bin" /etc/passwd will output the number of lines that contain the pattern "bin" in the file /etc/passwd.
+
