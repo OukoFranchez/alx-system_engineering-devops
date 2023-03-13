@@ -64,4 +64,12 @@ Replace all characters A and c from input to Z and e respectively.
 tr 'Ac' 'Ze' 
 
 ## 20. Without C, you would live in hiago
+Create a script that removes all letters c and C from input.
 
+tr -d 'Cc'
+
+The tr command can be used to remove characters from input.
+Here, the -d option is used to delete (remove) characters. The characters to be deleted are specified as the argument to the option, in this case 'cC'.
+
+## 21. esreveR
+Write a script that reverse its input
