@@ -109,3 +109,20 @@ One file name per line
 The listing should end with a new line
 You are not allowed to use basename, grep, egrep, fgrep or rgrep
 
+find . -type f -name "*.gif" -printf "%f\n" | rev | cut -c 5- | rev | sort -f
+
+*This command finds all files with the extension .gif in the current directory and all its subdirectories, prints their file name without the extension, sorts the names in a case-insensitive manner and then displays them.
+
+Here is a breakdown of the command:
+
+find .: starts a find command in the current directory and all subdirectories
+-type f: limits the search to regular files (excluding directories, sockets, etc.)
+-name "*.gif": *searches for files with the .gif extension
+-printf "%f\n": prints only the file name (not the entire path) followed by a newline character
+rev: reverses each line of output
+cut -c 5-: removes the last four characters of each line (i.e., the .gif extension)
+rev: reverses each line back to its original order
+sort -f: sorts the lines in a case-insensitive manner
+
+
+
