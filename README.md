@@ -175,4 +175,4 @@ So, if a file is recognized as a "School" file based on the contents of its firs
 
 ## 0x01-shell_permissions
 Has shell commands on permissions
- 
+Learning creating an alias 
