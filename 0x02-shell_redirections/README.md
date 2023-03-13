@@ -33,4 +33,10 @@ Display the number of lines that contain the pattern “bin” in the file /etc/
 grep -c "bin" /etc/passwd
 
 The -c option of grep is used to count the number of matches. So, the command grep -c "bin" /etc/passwd will output the number of lines that contain the pattern "bin" in the file /etc/passwd.
+## 16. What's next?
+Display lines containing the pattern “root” and 3 lines after them in the file /etc/passwd.
+
+grep -A 3 "root" /etc/passwd
+
+This uses the -A option of grep to specify the number of lines after the matching pattern to include in the output. In this case, we specify 3 to include 3 lines after each line that contains the pattern "root" in the /etc/passwd file.
 
