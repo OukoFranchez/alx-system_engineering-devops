@@ -73,3 +73,16 @@ Here, the -d option is used to delete (remove) characters. The characters to be 
 
 ## 21. esreveR
 Write a script that reverse its input
+
+rev
+
+## 22. DJ Cut Killer
+Write a script that displays all users and their home directories, sorted by users.
+
+Based on the the /etc/passwd file
+
+cut -f 1, 6 -d ':' /etc/passwd | sort
+
+The above command extracts the first and sixth fields from the /etc/passwd file using the cut command, where the fields are separated by colons (:). The first field is the username and the sixth field is the home directory. The output of cut is then piped to the sort command, which sorts the lines alphabetically by the first field (i.e., the username). The final output shows the list of all users and their home directories, sorted by the usernames.
+
+
