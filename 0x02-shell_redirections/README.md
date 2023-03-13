@@ -58,5 +58,10 @@ The regular expression ^[[:alpha:]] is composed of two parts:
 [[:alpha:]] - This is a character class that matches any alphabetic character, both uppercase and lowercase. The character class is enclosed in square brackets, which tells the regular expression to match any character that falls within the class.
 
 So when we combine these two parts, we get a regular expression that matches any line in the /etc/ssh/sshd_config file that begins with an alphabetic character, whether uppercase or lowercase. This is because the regular expression starts at the beginning of the line and matches any character that falls within the alphabetic character class.
+## 19. A to Z
+Replace all characters A and c from input to Z and e respectively.
 
+tr 'Ac' 'Ze' 
+
+## 20. Without C, you would live in hiago
 
