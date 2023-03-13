@@ -21,4 +21,9 @@ Words should be sorted
 sort | uniq -u
 
 This command uses the sort command to sort the input words in alphabetical order. The sorted list of words is then passed to the uniq command with the -u option to display only the unique words that appear exactly once.
+## 14. It must be in that file
+Display lines containing the pattern “root” from the file /etc/passwd
 
+grep "root" /etc/passwd
+
+This command searches for lines containing the pattern "root" in the file /etc/passwd.
