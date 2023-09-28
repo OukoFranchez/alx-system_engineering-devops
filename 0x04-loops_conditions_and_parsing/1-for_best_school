@@ -1,27 +1,5 @@
 #!/usr/bin/env bash
-
-"""
-This script prints the string "Best School" ten times.
-
-Example Usage:
-    $ ./Code-Under-Test
-    Best School
-    Best School
-    Best School
-    Best School
-    Best School
-    Best School
-    Best School
-    Best School
-    Best School
-    Best School
-
-Inputs:
-    There are no inputs for this script.
-
-Outputs:
-    This script outputs the string "Best School" ten times.
-"""
+#This script prints the string "Best School" ten times.
 
 my_string="Best School"
 
