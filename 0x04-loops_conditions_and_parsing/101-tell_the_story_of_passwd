@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# sh script that displays the content of the file /etc/passwd, using the while loop + IFS.
+
+passwd_file="/etc/passwd"
+
+while IFS=":" read -r username password uid gid info home shell;do
+	# Extract additional user information from /etc/passwd
+	user_id_info=$(grep "^$username:" /etc/passwd | cut -d ':' -f 5)
+	echo "The user $username is part of the $gid gang, lives in $home and rides $shell. $uid's place is protected by the passcode $password, more info about the user here: $user_id_info"
+done < "$passwd_file"
