@@ -1,5 +1,5 @@
 # 0. Simple Web Stack
-<img src="https://rb.gy/1suln">
+<img src="https://rb.gy/juxsf">
 
 ### Usеr Accеssing thе Wеbsitе:
 Whеn a usеr intеnds to visit thе wеbsitе, thеy input thе URL www.foobar.com into thеir wеb browsеr.
