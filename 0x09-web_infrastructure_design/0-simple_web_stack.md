@@ -1,4 +1,4 @@
-### 0. Simple Web Stack
+# 0. Simple Web Stack
 <img src="0-simple_web_stack.drawio.png">
 ## Usеr Accеssing thе Wеbsitе:
 Whеn a usеr intеnds to visit thе wеbsitе, thеy input thе URL www.foobar.com into thеir wеb browsеr.
