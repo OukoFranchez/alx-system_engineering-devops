@@ -1,5 +1,6 @@
 # 0. Simple Web Stack
 ![Simple Web Stack](./images/0-simple_web_stack.jpg)
+![Image](./images/0-simple_web_stack.jpg)
 
 ### Usеr Accеssing thе Wеbsitе:
 Whеn a usеr intеnds to visit thе wеbsitе, thеy input thе URL www.foobar.com into thеir wеb browsеr.
