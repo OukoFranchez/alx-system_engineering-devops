@@ -1,5 +1,5 @@
 # 1. Distributed web infrastructure
-<img src="./1-distributed_web_infrastructure.jpg">
+![Distributed web infrastructure](../images/1-distributed_web_infrastructure.jpg)
 
 A distributed web infrastructure is meticulously designed to excel in handling high traffic loads, achieving scalability, and fortifying fault tolerance by dispersing workloads across a network of interconnected servers. Instead of depending on a solitary server, this architecture orchestrates a symphony of servers working in concert to serve the website.
 
