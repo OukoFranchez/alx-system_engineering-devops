@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# Bash script that creates an RSA key pair.
+
+#Defining key file names
+private_key="school"
+public_key="${private_key}.pub"
+
+#checking if the key files already exist
+if [[ -e "$private_key" || -e "$public_key" ]]; then
+	echo "Key files already exist. Aborting."
+	exit 1
+fi
+
+# creating RSA key pair with the paraphrase
+echo "Generating public/private rsa key pair."
+ssh-keygen -t rsa -b 4096 -f "$private_key" -N "betty"
+
+# Displaying key information
+echo "Your identification has been saved in $private_key."
+echo "Your public key has been saved in $public_key."
+ssh-keygen -lf "$private_key"
