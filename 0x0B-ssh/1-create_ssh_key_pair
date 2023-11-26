@@ -12,10 +12,5 @@ if [[ -e "$private_key" || -e "$public_key" ]]; then
 fi
 
 # creating RSA key pair with the paraphrase
-echo "Generating public/private rsa key pair."
 ssh-keygen -t rsa -b 4096 -f "$private_key" -N "betty"
 
-# Displaying key information
-echo "Your identification has been saved in $private_key."
-echo "Your public key has been saved in $public_key."
-ssh-keygen -lf "$private_key"
