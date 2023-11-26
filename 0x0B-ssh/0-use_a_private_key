@@ -1,0 +1,8 @@
+#!/bin/bash/env bash
+# connecting to a server using private key
+# Server details
+user="ubuntu"
+server="54.172.129.154"
+
+# SSH command with single-character flags
+ssg -i ~/.ssh/school $user@$server
