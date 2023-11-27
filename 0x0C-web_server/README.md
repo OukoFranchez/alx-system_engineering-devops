@@ -1,6 +1,6 @@
 # 0x0C-web_server
 In this project, I learned how web servers work and began using one. I was
-provided a personal server by Alx  School. I learned how to use `scp`
+provided a personal server by Alx. I learned how to use `scp`
 and Fabric to transfer files to my server. Additionally, I completed a basic
 configuration of the server using Nginx.
 
@@ -48,4 +48,4 @@ configuration of the server using Nginx.
   * Nginx should be listening on port 80
   * When querying Nginx at its root / with a GET request (requesting a page) using curl, it must return a page that contains the string Hello World!
   * The redirection must be a “301 Moved Permanently”
-  * Your answer file should be a Puppet manifest containing commands to automatically configure an Ubuntu machine to respect above requirements
+  * Answer file should be a Puppet manifest containing commands to automatically configure an Ubuntu machine to respect above requirements
