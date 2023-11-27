@@ -1,4 +1,5 @@
 # 0x0C-web_server
+<img src="https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2020/9/01cab59e881e31842b8d47a0974e8d3b6f0f2001.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20231127%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20231127T232719Z&amp;X-Amz-Expires=86400&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=bc71d84cf3dc58cd1652ae5f6b115732516333991b7dd9eab0081d2388f6eae5" alt="" loading="lazy" style="">
 In this project, I learned how web servers work and began using one. I was
 provided a personal server by Alx. I learned how to use `scp`
 and Fabric to transfer files to my server. Additionally, I completed a basic
