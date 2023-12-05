@@ -1,22 +1,23 @@
 #!/usr/bin/env bash
-# installs and configures HAProxy load balancer
+# Install and configure HAproxy on your lb-01 server so that it send traffic to web-01 and web-02
 
-sudo apt install -y --no-install-recommends software-properties-common
-sudo apt update -y
-sudo apt install -y haproxy
+sudo apt-get update
+sudo apt-get -y install haproxy
 
-CONFIG="\
-frontend http_front
-	bind *:80
-	mode http
-	default_backend http_back
-backend http_back
-	balance roundrobin
-	server 635-web-01 35.237.86.168:80 check
-	server 635-web-02 35.175.223.149:80 check
-"
+# create a backup of the existing config file
+sudo cp /etc/haproxy/haproxy.cfg /etc/haproxy/haproxy.cfg.backup
 
-sudo echo "$CONFIG" | sudo tee -a /etc/haproxy/haproxy.cfg
-sudo echo "ENABLED=1" | sudo tee -a /etc/default/haproxy
+# Configure the load balancing frontend
+echo "frontend my_frontend
+    mode http
+    bind *:80
+    default_backend my_backend" | sudo tee /etc/haproxy/haproxy.cfg
+
+# Configure the load balancing backend
+echo "backend my_backend
+    mode http
+    balance roundrobin
+    server web_01 18.204.6.232:80 check
+    server web_02 3.86.13.144:80 check" | sudo tee -a /etc/haproxy/haproxy.cfg
 
 sudo service haproxy restart
