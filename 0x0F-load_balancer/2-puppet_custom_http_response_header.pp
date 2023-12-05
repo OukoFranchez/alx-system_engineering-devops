@@ -1,39 +1,40 @@
-# Configure our servers with puppet
+# Install Nginx and configure custom header
 
-exec { 'update apt':
-    command => 'sudo apt update -y',
-    path    => '/usr/bin/'
+# Install Nginx
+exec { 'install_nginx':
+    command => '/usr/bin/apt-get update && /usr/bin/apt-get -y install nginx',
+    creates => '/usr/sbin/nginx',
 }
 
-exec { 'install Nginx':
-    command => 'sudo apt install -y nginx',
-    path    => '/usr/bin/'
+package { 'nginx':
+    require  => Exec['install_nginx'],
 }
 
-exec { 'update firewall':
-    command => "sudo ufw allow 'Nginx http'",
-    path    => '/usr/bin/:/usr/sbin/'
+# Ensure the 'nginx' service is enabled and running
+service { 'nginx':
+    ensure  => 'running',
+    enable  => true,
+    require => Exec['install_nginx'],
 }
 
-exec { 'index page return':
-    command => 'echo "Hello World!" | sudo tee /var/www/html/index.nginx-debian.html',
-    path    => '/usr/bin/'
+# root message hello world
+file { '/var/www/html/index.html' :
+    ensure  => 'file',
+    content => 'Hello World!',
+    require => Package['nginx'],
 }
 
-exec { '404 page':
-    command => 'echo "Ceci n\'est pas une page" | sudo tee /usr/share/nginx/html/custom_404.html',
-    path    => '/usr/bin/'
+# Configure custom header in Nginx site configuration
+file_line { 'custom_header':
+    ensure  => present,
+    path    => '/etc/nginx/sites-available/default',
+    line    => "        add_header X-Served-By ${hostname};",
+    after   => 'server_name _;',
+    require => Package['nginx'],
 }
 
-$new_header = "\n\tadd_header X-Served-By \$hostname;"
-$redirect="server_name _;\n\trewrite ^/redirect_me google.com permanent;"
-$not_found="\n\terror_page 404 /custom_404.html;\n\tlocation = /custom_404.html {\n\t\troot /usr/share/nginx/html;\n\t\tinternal;\n\t}"
-exec { 'change the default configuration':
-    command => 'sudo sed -i "s/server_name _;/$redirect$new_header$not_found/" /etc/nginx/sites-enabled/default',
-    path    => '/usr/bin'
-}
-
-exec { 'restart nginx':
-    command => 'sudo service nginx restart',
-    path    => '/usr/bin/:/usr/sbin/'
+# Restart Nginx after updating the site configuration
+exec { 'restart_nginx':
+    command => '/usr/sbin/service nginx restart',
+    require => File_line['custom_header'],
 }
