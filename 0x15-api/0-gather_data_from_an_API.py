@@ -12,13 +12,24 @@ from sys import argv
 
 def todo_progress():
     """
-    fetches todo list progress for an employee
-    """
-    user_url = 'https://jsonplaceholder.typicode.com/users/{}'\
-    .format(argv[1])
-    todo_url = 'https://jsonplaceholder.typicode.com/users/{}/todos'\
-    .format(argv[1])
+    Fetches the progress of a to-do list for a specific employee from a RESTful API.
 
+    Args:
+        None
+
+    Returns:
+        None
+
+    Example Usage:
+        python script.py 1
+
+    This function can be used by running a Python
+    script with the employee ID as a command line argument.
+    It will fetch the to-do list progress for the employee with
+    the specified ID from the RESTful API and display the progress.
+    """
+    user_url = 'https://jsonplaceholder.typicode.com/users/{}'.format(argv[1])
+    todo_url = 'https://jsonplaceholder.typicode.com/users/{}/todos'.format(argv[1])
 
     total_count = 0
     completed_count = 0
