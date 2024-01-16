@@ -1,28 +1,23 @@
 #!/usr/bin/python3
 """
-Module for task 1
+Script that queries the Reddit API and prints the titles of the first 10 hot
+posts listed for a given subreddit.
 """
 import requests
-
-headers = {"User-Agent": "MyCustomUserAgent/1.0"}
 
 
 def top_ten(subreddit):
     """
-    Retrieve the top ten posts from a specified subreddit.
-
-    Parameters:
-    - subreddit (str): The name of the subreddit to retrieve posts from.
-
-    Returns:
-    - None
+        return top ten titles for a given subreddit
+        return None if invalid subreddit given
     """
+    headers = requests.utils.default_headers()
+    headers.update({'User-Agent': 'My User Agent 1.0'})
 
     url = "https://www.reddit.com/r/{}/hot.json?limit=10".format(subreddit)
-    response = requests.get(url, allow_redirects=False, headers=headers)
-    if response.status_code == 200:
-        data = response.json()
-        for post in data["data"]["children"]:
-            print(post["data"]["title"])
-    else:
-        print("None")
+    r = requests.get(url, headers=headers).json()
+    top_titles = r.get('data', {}).get('children', [])
+    if not top_titles:
+        print(None)
+    for title in top_titles:
+        print(title.get('data').get('title'))
